@@ -3,7 +3,7 @@ import SectionTitle from "./SectionTitle";
 // import Amazon from "./works/Amazon";
 import Three from "./works/Three";
 import Two from "./works/Two";
-import One from "./works/one";
+import One from "./works/One";
 import Four from "./works/Four";
 
 const Experience = () => {
