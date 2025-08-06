@@ -4,12 +4,13 @@ import Experience from "./components/Experience";
 import LeftSide from "./components/LeftSide";
 import Navbar from "./components/Navbar";
 import { motion } from "framer-motion";
-import Projects from "./components/Projects";
 import Archive from "./components/Archive";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Cpr from "./components/Cpr"; // Assuming Cpr is a component for the footer
 import RightSide from "./components/RightSide";
 import Container from "./components/Container";
+import Education from "./components/Education";
 
 function App() {
   return (
@@ -28,9 +29,10 @@ function App() {
           <Banner />
           <About />
           <Experience />
-          <Projects />
+          <Education />
           <Archive />
           <Contact />
+          <Cpr />
           <Footer />
         </Container>
         <motion.div

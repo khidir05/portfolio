@@ -18,40 +18,29 @@ const About = () => {
           className="w-full lg:w-2/3 text-base text-textDark font-bodyFont flex flex-col gap-6"
         >
           <p>
-            Hello! My name is Noor Mohammad, and I’m passionate about crafting
-            exceptional web experiences. My journey in web development began in
-            2012 when I started experimenting with custom Tumblr themes, where
-            building a custom reblog button sparked my love for HTML and CSS.
+            Hello I am Khidir and I am a dedicated technology enthusiast, currently balancing my roles as a university student and educator. My professional focus is on practical skill development—mastering my current abilities while consistently building new ones, and I actively leverage AI to support and accelerate my learning process. I thrive in challenging situations by maintaining a calm and analytical perspective, ensuring every problem becomes a valuable lesson.
           </p>
           <p>
-            Today, I’ve had the privilege of working at an{" "}
-            <span className="text-textGreen">
-              advertising agency, a startup, a major corporation, and a
-              student-led design studio.
-            </span>{" "}
-            My diverse experiences have honed my skills in creating
-            user-friendly, scalable, and visually appealing applications. I
-            thrive on solving complex problems and bringing ideas to life on the
-            internet.
-          </p>
-          <p>
-            I’m constantly learning and adapting to new technologies to stay at
-            the forefront of web development. My focus is on building seamless,
-            performant, and accessible digital solutions.
+            This drive extends beyond academics into the realm of entrepreneurship. While pursuing my degree, I am also actively building a portfolio of digital and non-digital businesses. This allows me to experiment, inovate, and apply my skills in a dynamic environment, effectively turning concepts into reality.
           </p>
           <p className="font-titleFont font-semibold text-textLight">
             Here are some technologies I’ve been working with recently:
           </p>
           <ul className="max-w-[450px] text-sm font-titleFont grid grid-cols-2 gap-3 mt-4">
             {[
-              "JavaScript (ES6+)",
-              "Next.js",
-              "React",
-              "Node.js",
-              "TypeScript",
-              "Express.js",
-              "MongoDB",
-              "Tailwind CSS",
+              "Design Graphics",
+              "Office Suite Proficiency",
+              "Data",
+              "JS",
+              "WordPress",
+              "Desktop Support Technician",
+              "Linux Administrator",
+              "CAD and 3D Modeling",
+              "Web Development",
+              "AWS",
+              "PHP",
+              "C#",
+              "Electrical Engineering"
             ].map((tech, index) => (
               <motion.li
                 key={tech}
@@ -78,12 +67,10 @@ const About = () => {
           <div className="absolute w-full h-80 rounded-lg overflow-hidden shadow-navbarShadow">
             <img
               className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
-              src={"/assets/images/profile.png"}
+              src={"/assets/images/1.jpg"}
               alt="Profile Image"
             />
-            <div className="absolute inset-0 bg-textGreen/20 rounded-lg transition-opacity duration-300 group-hover:opacity-0"></div>
           </div>
-          <div className="hidden lg:block absolute inset-0 border-2 border-textGreen rounded-lg -translate-x-3 -translate-y-3 group-hover:-translate-x-4 group-hover:-translate-y-4 transition-transform duration-300"></div>
         </motion.div>
       </div>
     </section>

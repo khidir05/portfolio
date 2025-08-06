@@ -1,101 +1,101 @@
 import { useState } from "react";
 import SectionTitle from "./SectionTitle";
-import Amazon from "./works/Amazon";
-import Apple from "./works/Apple";
-import Google from "./works/Google";
-import ReactBD from "./works/ReactBD";
-import Splash from "./works/Splash";
+// import Amazon from "./works/Amazon";
+import Three from "./works/Three";
+import Two from "./works/Two";
+import One from "./works/one";
+import Four from "./works/Four";
 
 const Experience = () => {
-  const [workReactbd, setWorkReactbd] = useState(true);
-  const [workGoogle, setWorkGoogle] = useState(false);
-  const [workApple, setWorkApple] = useState(false);
-  const [workSplash, setWorkSplash] = useState(false);
-  const [workAmazon, setWorkAmazon] = useState(false);
+  const [workOne, setWorkOne] = useState(true);
+  const [workTwo, setWorkTwo] = useState(false);
+  const [workThree, setWorkThree] = useState(false);
+  const [workFour, setWorkFour] = useState(false);
+  // const [workAmazon, setWorkAmazon] = useState(false);
 
-  const handleReactbd = () => {
-    setWorkReactbd(true);
-    setWorkGoogle(false);
-    setWorkApple(false);
-    setWorkSplash(false);
-    setWorkAmazon(false);
-  };
-
-  const handleGoogle = () => {
-    setWorkReactbd(false);
-    setWorkGoogle(true);
-    setWorkApple(false);
-    setWorkSplash(false);
-    setWorkAmazon(false);
+  const handleOne = () => {
+    setWorkOne(true);
+    setWorkTwo(false);
+    setWorkThree(false);
+    setWorkFour(false);
+    // setWorkAmazon(false);
   };
 
-  const handleApple = () => {
-    setWorkReactbd(false);
-    setWorkGoogle(false);
-    setWorkApple(true);
-    setWorkSplash(false);
-    setWorkAmazon(false);
+  const handleTwo = () => {
+    setWorkOne(false);
+    setWorkTwo(true);
+    setWorkThree(false);
+    setWorkFour(false);
+    // setWorkAmazon(false);
   };
-  const handleSplash = () => {
-    setWorkReactbd(false);
-    setWorkGoogle(false);
-    setWorkApple(false);
-    setWorkSplash(true);
-    setWorkAmazon(false);
+
+  const handleThree = () => {
+    setWorkOne(false);
+    setWorkTwo(false);
+    setWorkThree(true);
+    setWorkFour(false);
+    // setWorkAmazon(false);
   };
-  const handleAmazon = () => {
-    setWorkReactbd(false);
-    setWorkGoogle(false);
-    setWorkApple(false);
-    setWorkSplash(false);
-    setWorkAmazon(true);
+  const handleFour = () => {
+    setWorkOne(false);
+    setWorkTwo(false);
+    setWorkThree(false);
+    setWorkFour(true);
+    // setWorkAmazon(false);
   };
+  // const handleAmazon = () => {
+  //   setWorkOne(false);
+  //   setWorkTwo(false);
+  //   setWorkThree(false);
+  //   setWorkFour(false);
+  //   setWorkAmazon(true);
+  // };
   return (
     <section id="experience" className="py-10 lg:py-24">
       <SectionTitle title="Where I have Worked" titleNo="02" />
       <div className="w-full mt-10 flex flex-col md:flex-row gap-16">
         <ul className="md:w-32 flex flex-col">
           <li
-            onClick={handleReactbd}
+            onClick={handleOne}
             className={`${
-              workReactbd
+              workOne
                 ? "border-l-textGreen text-textGreen"
                 : "border-l-hoverColor text-textDark"
             } border-l-2 bg-transparent hover:bg-[#112240] py-3 text-sm  cursor-pointer duration-300 px-8 font-medium`}
           >
-            RactBD
+            At Home
           </li>
           <li
-            onClick={handleGoogle}
+            onClick={handleTwo}
             className={`${
-              workGoogle
+              workTwo
                 ? "border-l-textGreen text-textGreen"
                 : "border-l-hoverColor text-textDark"
             } border-l-2 bg-transparent hover:bg-[#112240] py-3 text-sm  cursor-pointer duration-300 px-8 font-medium`}
           >
-            Google
+            PC LDII Cilacap Utara
           </li>
           <li
-            onClick={handleApple}
+            onClick={handleThree}
             className={`${
-              workApple
+              workThree
                 ? "border-l-textGreen text-textGreen"
                 : "border-l-hoverColor text-textDark"
             } border-l-2 bg-transparent hover:bg-[#112240] py-3 text-sm  cursor-pointer duration-300 px-8 font-medium`}
           >
-            Apple
+            Lentera Sinar Pemuda
           </li>
           <li
-            onClick={handleSplash}
+            onClick={handleFour}
             className={`${
-              workSplash
+              workFour
                 ? "border-l-textGreen text-textGreen"
                 : "border-l-hoverColor text-textDark"
             } border-l-2 bg-transparent hover:bg-[#112240] py-3 text-sm  cursor-pointer duration-300 px-8 font-medium`}
           >
-            Splash
+            CV. Ady Teknik
           </li>
-          <li
+          {/* <li
             onClick={handleAmazon}
             className={`${
               workAmazon
@@ -104,13 +104,13 @@ const Experience = () => {
             } border-l-2 bg-transparent hover:bg-[#112240] py-3 text-sm  cursor-pointer duration-300 px-8 font-medium`}
           >
             Amazon
-          </li>
+          </li> */}
         </ul>
-        {workReactbd && <ReactBD />}
-        {workGoogle && <Google />}
-        {workApple && <Apple />}
-        {workSplash && <Splash />}
-        {workAmazon && <Amazon />}
+        {workOne && <One />}
+        {workTwo && <Two />}
+        {workThree && <Three />}
+        {workFour && <Four />}
+        {/* {workAmazon && <Amazon />} */}
       </div>
     </section>
   );

@@ -52,7 +52,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.1 }}
           >
-            <img className="w-14" src={"/assets/images/logo.png"} alt="logo" />
+            <img className="w-14" src={"/assets/images/dir.png"} alt="logo" />
           </motion.div>
         </a>
         {/* ============ Logo End here ============== */}
@@ -102,7 +102,7 @@ const Navbar = () => {
             </a>
             <a
               className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-              href="#project"
+              href="#education"
               onClick={handleScroll}
             >
               <motion.li
@@ -111,6 +111,20 @@ const Navbar = () => {
                 transition={{ duration: 0.1, delay: 0.3 }}
               >
                 <span className="text-textGreen">03.</span>
+                Education
+              </motion.li>
+            </a>
+            <a
+              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+              href="#projects"
+              onClick={handleScroll}
+            >
+              <motion.li
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.1, delay: 0.3 }}
+              >
+                <span className="text-textGreen">04.</span>
                 Project
               </motion.li>
             </a>
@@ -124,12 +138,12 @@ const Navbar = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.1, delay: 0.4 }}
               >
-                <span className="text-textGreen">04.</span>
+                <span className="text-textGreen">05.</span>
                 Contact
               </motion.li>
             </a>
           </ul>
-          <a href="/assets/noor_resume.pdf" target="_blank">
+          <a href="/assets/Khidir_CV.pdf" target="_blank">
             <motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -228,7 +242,25 @@ const Navbar = () => {
                     </a>
                     <a
                       className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-                      href="#project"
+                      href="#education"
+                      onClick={handleScroll}
+                    >
+                      <motion.li
+                        initial={{ x: 20, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{
+                          duration: 0.2,
+                          delay: 0.4,
+                          ease: "easeIn",
+                        }}
+                      >
+                        <span className="text-textGreen">03.</span>
+                        Education
+                      </motion.li>
+                    </a>
+                    <a
+                      className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+                      href="#projects"
                       onClick={handleScroll}
                     >
                       <motion.li
