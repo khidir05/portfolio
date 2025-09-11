@@ -27,7 +27,7 @@ const Archive = () => {
       link: "", // Link dikosongkan jika proyek tidak publik
     },
     {
-      title: "VocabsNow - Vocabulary Learning App",
+      title: "rimbakata - Language Learning App",
       des: "An ongoing project to help users learn and practice vocabulary through interactive exercises and quizzes. Still in development.",
       listItem: ["Next.js", "Laravel", "MySQL"],
       link: "",
