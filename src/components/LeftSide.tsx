@@ -1,43 +1,23 @@
+import React from "react";
+import { motion } from "framer-motion";
 import { TbBrandGithub } from "react-icons/tb";
-import { SlSocialYoutube } from "react-icons/sl";
-import {
-  SlSocialLinkedin,
-  SlSocialInstagram,
-} from "react-icons/sl";
+import { SlSocialYoutube, SlSocialLinkedin, SlSocialInstagram } from "react-icons/sl";
 
 const LeftSide = () => {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-end gap-4 text-textLight">
-      <div className="flex flex-col gap-4">
-        <a href="https://github.com/khidir05" target="_blank">
-          <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-            <TbBrandGithub />
-          </span>
-        </a>
-        <a
-          href="https://youtube.com/@mz.amlabar8311?si=JxCfBrDcG77lei2a"
-          target="_blank"
-        >
-          <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-            <SlSocialYoutube />
-          </span>
-        </a>
-        <a
-          href="www.linkedin.com/in/khidir-afwan-amlabar-454577253"
-          target="_blank"
-        >
-          <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-            <SlSocialLinkedin />
-          </span>
-        </a>
-        <a href="https://www.instagram.com/khidir.af_one/" target="_blank">
-          <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-            <SlSocialInstagram />
-          </span>
-        </a>
-      </div>
-      <div className="w-[2px] h-32 bg-textDark"></div>
-    </div>
+    <aside className="hidden xl:flex w-32 h-full fixed left-0 bottom-0 flex-col items-center justify-end gap-6 pb-10 z-40">
+      {[
+        { icon: <TbBrandGithub />, url: "https://github.com/khidir05" },
+        { icon: <SlSocialYoutube />, url: "https://youtube.com/@mz.amlabar8311" },
+        { icon: <SlSocialLinkedin />, url: "https://linkedin.com/in/khidir-afwan-amlabar-454577253" },
+        { icon: <SlSocialInstagram />, url: "https://instagram.com/khidir.af_one/" }
+      ].map((item, index) => (
+        <motion.a key={index} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1 + (index * 0.1) }} href={item.url} target="_blank" className="text-2xl text-textLight hover:text-textGreen hover:-translate-y-1 transition-all">
+          {item.icon}
+        </motion.a>
+      ))}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="w-[1px] h-32 bg-textDark mt-4"></motion.div>
+    </aside>
   );
 };
 

@@ -1,383 +1,75 @@
-import { useRef } from "react";
-import { useState } from "react";
-import { TbBrandGithub } from "react-icons/tb";
-import {
-  SlSocialYoutube,
-  SlSocialLinkedin,
-  SlSocialFacebook,
-  SlSocialInstagram,
-} from "react-icons/sl";
-import { MdOutlineClose } from "react-icons/md";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Container from "./Container";
+import { MdOutlineClose } from "react-icons/md";
 
 const Navbar = () => {
-  const ref = useRef(null);
-  const [show, setShow] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
-    setShow(false);
-    const href = e.currentTarget.href;
-    const targetId = href.replace(/.*#/, "");
+    setShowMenu(false);
+    const targetId = e.currentTarget.href.replace(/.*#/, "");
     const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({
-      behavior: "smooth",
-    });
-    // Update the class name of the clicked link
-    const links = document.querySelectorAll(".nav-link");
-    links.forEach((link) => {
-      link.classList.remove("active");
-    });
-    e.currentTarget.classList.add("active");
-  };
-
-  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (
-      e.target instanceof Node &&
-      ref.current &&
-      e.target.contains(ref.current)
-    ) {
-      setShow(false);
+    if (elem) {
+      // Menambahkan offset agar tidak tertutup navbar
+      const top = elem.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: "smooth" });
     }
   };
 
   return (
-    <div className="w-full shadow-navbarShadow h-20 lg:h-[12vh] sticky top-0 z-50 bg-bodyColor">
-      <Container className="h-full py-1 font-titleFont flex items-center justify-between">
-        {/* ============ Logo Start here ============ */}
-        <a href="/">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.1 }}
-          >
-            <img className="w-14" src={"/assets/images/dir.png"} alt="logo" />
-          </motion.div>
-        </a>
-        {/* ============ Logo End here ============== */}
-        {/* ============ ListItem Start here ======== */}
-        <div className="hidden md:inline-flex items-center gap-7">
-          <ul className="flex text-[13px] gap-7">
-            <a
-              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-              href="#home"
-              onClick={handleScroll}
-            >
-              <motion.li
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.1 }}
-              >
-                Home
-              </motion.li>
-            </a>
-            <a
-              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-              href="#about"
-              onClick={handleScroll}
-            >
-              <motion.li
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.1, delay: 0.1 }}
-              >
-                <span className="text-textGreen">01.</span>
-                About
-              </motion.li>
-            </a>
-            <a
-              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-              href="#experience"
-              onClick={handleScroll}
-            >
-              <motion.li
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.1, delay: 0.2 }}
-              >
-                <span className="text-textGreen">02.</span>
-                Experience
-              </motion.li>
-            </a>
-            <a
-              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-              href="#education"
-              onClick={handleScroll}
-            >
-              <motion.li
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.1, delay: 0.3 }}
-              >
-                <span className="text-textGreen">03.</span>
-                Education
-              </motion.li>
-            </a>
-            <a
-              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-              href="#projects"
-              onClick={handleScroll}
-            >
-              <motion.li
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.1, delay: 0.3 }}
-              >
-                <span className="text-textGreen">04.</span>
-                Project
-              </motion.li>
-            </a>
-            <a
-              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-              href="#contact"
-              onClick={handleScroll}
-            >
-              <motion.li
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.1, delay: 0.4 }}
-              >
-                <span className="text-textGreen">05.</span>
-                Contact
-              </motion.li>
-            </a>
-          </ul>
-          <a href="/assets/Khidir_CV.pdf" target="_blank">
-            <motion.button
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="px-4 py-2 rounded-md text-textGreen text-[13px] border border-textGreen hover:bg-hoverColor duration-300"
-            >
-              Resume
-            </motion.button>
-          </a>
+    <>
+      <nav className="w-full shadow-lg backdrop-blur-md h-20 lg:h-[10vh] sticky top-0 z-50 bg-bodyColor/90 px-4 border-b border-gray-800">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8 h-full flex items-center justify-between">
+          <motion.img initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="w-12 cursor-pointer" src="/assets/images/dir.png" alt="logo" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} />
+          
+          <div className="hidden md:inline-flex items-center gap-8">
+            <ul className="flex font-mono text-[13px] gap-8">
+              {["home", "about", "experience", "education", "projects", "contact"].map((id, i) => (
+                <a key={id} href={`/#${id}`} onClick={handleScroll} className="text-textLight hover:text-textGreen transition-colors duration-300">
+                  <motion.li initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.1 }}>
+                    <span className="text-textGreen">0{i}.</span> {id.charAt(0).toUpperCase() + id.slice(1)}
+                  </motion.li>
+                </a>
+              ))}
+            </ul>
+            {/* Update: Link Resume */}
+            <motion.a initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} href="/file/me.pdf" download="Resume_Khidir" target="_blank">
+              <button className="px-5 py-2.5 rounded text-textGreen font-mono text-[13px] border border-textGreen hover:bg-textGreen/10 transition-colors duration-300">Resume</button>
+            </motion.a>
+          </div>
+
+          <div onClick={() => setShowMenu(true)} className="md:hidden flex flex-col gap-[6px] cursor-pointer group p-2">
+            <span className="w-7 h-[2px] bg-textGreen transition-all group-hover:w-5"></span>
+            <span className="w-7 h-[2px] bg-textGreen"></span>
+            <span className="w-7 h-[2px] bg-textGreen transition-all group-hover:w-5"></span>
+          </div>
         </div>
-        {/* ============== Small Icon Start here =========== */}
-        <div
-          onClick={() => setShow(true)}
-          className="w-6 h-5 flex flex-col justify-between items-center md:hidden text-4xl text-textGreen cursor-pointer overflow-hidden group"
-        >
-          <span className="w-full h-[2px] bg-textGreen inline-flex transform group-hover:translate-x-2 transition-all ease-in-out duration-300"></span>
-          <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300"></span>
-          <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300"></span>
-        </div>
-        <AnimatePresence>
-          {show && (
-            <motion.div
-              ref={ref}
-              onClick={handleClick}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="absolute md:hidden top-0 right-0 w-full h-screen bg-black/50 flex flex-col items-end"
-            >
-              <motion.div
-                initial={{ x: 200, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: 200, opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="w-[80%] h-full overflow-y-scroll scrollbarHide bg-[#112240] flex flex-col items-center px-4 py-10 relative"
-              >
-                <MdOutlineClose
-                  onClick={() => setShow(false)}
-                  className="text-3xl text-textGreen cursor-pointer hover:text-red-500 absolute top-4 right-4"
-                />
-                <div className="flex flex-col items-center gap-7">
-                  <ul className="flex flex-col text-base gap-7">
-                    <a
-                      className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-                      href="#home"
-                      onClick={handleScroll}
-                    >
-                      <motion.li
-                        initial={{ x: 20, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{
-                          duration: 0.2,
-                          delay: 0.1,
-                          ease: "easeIn",
-                        }}
-                      >
-                        Home
-                      </motion.li>
-                    </a>
-                    <a
-                      className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-                      href="#about"
-                      onClick={handleScroll}
-                    >
-                      <motion.li
-                        initial={{ x: 20, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{
-                          duration: 0.2,
-                          delay: 0.2,
-                          ease: "easeIn",
-                        }}
-                      >
-                        <span className="text-textGreen">01.</span>
-                        About
-                      </motion.li>
-                    </a>
-                    <a
-                      className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-                      href="#experience"
-                      onClick={handleScroll}
-                    >
-                      <motion.li
-                        initial={{ x: 20, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{
-                          duration: 0.2,
-                          delay: 0.3,
-                          ease: "easeIn",
-                        }}
-                      >
-                        <span className="text-textGreen">02.</span>
-                        Experience
-                      </motion.li>
-                    </a>
-                    <a
-                      className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-                      href="#education"
-                      onClick={handleScroll}
-                    >
-                      <motion.li
-                        initial={{ x: 20, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{
-                          duration: 0.2,
-                          delay: 0.4,
-                          ease: "easeIn",
-                        }}
-                      >
-                        <span className="text-textGreen">03.</span>
-                        Education
-                      </motion.li>
-                    </a>
-                    <a
-                      className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-                      href="#projects"
-                      onClick={handleScroll}
-                    >
-                      <motion.li
-                        initial={{ x: 20, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{
-                          duration: 0.2,
-                          delay: 0.4,
-                          ease: "easeIn",
-                        }}
-                      >
-                        <span className="text-textGreen">03.</span>
-                        Project
-                      </motion.li>
-                    </a>
-                    <a
-                      className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
-                      href="#contact"
-                      onClick={handleScroll}
-                    >
-                      <motion.li
-                        initial={{ x: 20, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{
-                          duration: 0.2,
-                          delay: 0.5,
-                          ease: "easeIn",
-                        }}
-                      >
-                        <span className="text-textGreen">04.</span>
-                        Contact
-                      </motion.li>
-                    </a>
-                  </ul>
-                  <a href="/assets/noor_resume.pdf" target="_blank">
-                    <motion.button
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.6, ease: "easeIn" }}
-                      className="w-32 h-10 rounded-md text-textGreen text-[13px] border border-textGreen hover:bg-hoverColor duration-300"
-                    >
-                      Resume
-                    </motion.button>
+      </nav>
+
+      {/* Mobile Drawer */}
+      <AnimatePresence>
+        {showMenu && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[60] bg-bodyColor/80 md:hidden backdrop-blur-sm">
+            <motion.div initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "tween", duration: 0.3 }} className="absolute right-0 top-0 w-[75%] max-w-sm h-full bg-[#112240] flex flex-col items-center p-10 shadow-2xl">
+              <MdOutlineClose onClick={() => setShowMenu(false)} className="text-4xl text-textGreen self-end cursor-pointer hover:rotate-90 transition-transform duration-300" />
+              <ul className="flex flex-col gap-10 text-center mt-24">
+                {["home", "about", "experience", "education", "projects", "contact"].map((id, i) => (
+                  <a key={id} href={`/#${id}`} onClick={handleScroll} className="text-lg font-mono text-textLight hover:text-textGreen transition-colors">
+                    <span className="text-textGreen block mb-1 text-sm">0{i}.</span> 
+                    {id.toUpperCase()}
                   </a>
-                  <div className="flex gap-4">
-                    <motion.a
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.8, ease: "easeIn" }}
-                      href="https://github.com/noorjsdivs"
-                      target="_blank"
-                    >
-                      <span className="w-10 h-10 text-xl bg-bodyColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-                        <TbBrandGithub />
-                      </span>
-                    </motion.a>
-                    <motion.a
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.85, ease: "easeIn" }}
-                      href="https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"
-                      target="_blank"
-                    >
-                      <span className="w-10 h-10 text-xl bg-bodyColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-                        <SlSocialYoutube />
-                      </span>
-                    </motion.a>
-                    <motion.a
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.9, ease: "easeIn" }}
-                      href="https://www.linkedin.com/in/noor-mohammad-ab2245193/"
-                      target="_blank"
-                    >
-                      <span className="w-10 h-10 text-xl bg-bodyColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-                        <SlSocialLinkedin />
-                      </span>
-                    </motion.a>
-                    <motion.a
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.95, ease: "easeIn" }}
-                      href="https://www.facebook.com/Noorlalu143/"
-                      target="_blank"
-                    >
-                      <span className="w-10 h-10 text-xl bg-bodyColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-                        <SlSocialFacebook />
-                      </span>
-                    </motion.a>
-                    <motion.a
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 1, ease: "easeIn" }}
-                      href="https://www.instagram.com/simplenoor143/"
-                      target="_blank"
-                    >
-                      <span className="w-10 h-10 text-xl bg-bodyColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-                        <SlSocialInstagram />
-                      </span>
-                    </motion.a>
-                  </div>
-                </div>
-                <motion.a
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1.2, ease: "easeIn" }}
-                  className="text-sm w-72 tracking-widest text-textGreen text-center mt-4"
-                  href="mailto:noor.jsdivs@gmail.com"
-                >
-                </motion.a>
-              </motion.div>
+                ))}
+              </ul>
+              {/* Update: Link Resume Mobile */}
+              <a href="/file/me.pdf" download="Resume_Khidir" target="_blank" className="mt-auto mb-10">
+                <button className="px-10 py-3 border border-textGreen rounded text-textGreen font-mono hover:bg-textGreen/10 transition-colors">Resume</button>
+              </a>
             </motion.div>
-          )}
-        </AnimatePresence>
-        {/* ============== Small Icon End here ============= */}
-      </Container>
-    </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

@@ -1,46 +1,19 @@
+import React from "react";
 import { TbBrandGithub } from "react-icons/tb";
-import { SlSocialYoutube } from "react-icons/sl";
-import {
-  SlSocialLinkedin,
-  SlSocialFacebook,
-  SlSocialInstagram,
-} from "react-icons/sl";
+import { SlSocialYoutube, SlSocialLinkedin } from "react-icons/sl";
 
 const Footer = () => {
   return (
-    <div className="hidden :inline-flex xl:hidden items-center justify-center w-full py-6 gap-4">
-      <a href="https://github.com/noorjsdivs" target="_blank">
-        <span className="w-10 h-10 text-xl bg-bodyColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-          <TbBrandGithub />
-        </span>
-      </a>
-      <a
-        href="https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"
-        target="_blank"
-      >
-        <span className="w-10 h-10 text-xl bg-bodyColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-          <SlSocialYoutube />
-        </span>
-      </a>
-      <a
-        href="https://www.linkedin.com/in/noor-mohammad-ab2245193/"
-        target="_blank"
-      >
-        <span className="w-10 h-10 text-xl bg-bodyColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-          <SlSocialLinkedin />
-        </span>
-      </a>
-      <a href="https://www.facebook.com/Noorlalu143/" target="_blank">
-        <span className="w-10 h-10 text-xl bg-bodyColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-          <SlSocialFacebook />
-        </span>
-      </a>
-      <a href="https://www.instagram.com/simplenoor143/" target="_blank">
-        <span className="w-10 h-10 text-xl bg-bodyColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
-          <SlSocialInstagram />
-        </span>
-      </a>
-    </div>
+    <footer className="py-8 text-center flex flex-col items-center justify-center max-w-6xl mx-auto px-6 lg:px-8">
+      <div className="xl:hidden flex gap-6 mb-6">
+        <a href="https://github.com/khidir05" className="text-2xl text-textDark hover:text-textGreen transition-colors"><TbBrandGithub /></a>
+        <a href="https://youtube.com/@mz.amlabar8311" className="text-2xl text-textDark hover:text-textGreen transition-colors"><SlSocialYoutube /></a>
+        <a href="https://linkedin.com/in/khidir-afwan-amlabar-454577253" className="text-2xl text-textDark hover:text-textGreen transition-colors"><SlSocialLinkedin /></a>
+      </div>
+      <p className="text-sm font-mono text-textDark hover:text-textGreen transition-colors cursor-pointer">
+        Built by NoorMuhammad. Modded & Styled by Khidir Afwan.
+      </p>
+    </footer>
   );
 };
 
