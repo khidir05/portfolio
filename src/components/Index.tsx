@@ -30,13 +30,12 @@ const Index = () => {
   ];
 
   const experiences = [
-    { label: "At Home", title: "Independent Developer", date: "Present", details: "Focusing on mastering full-stack capabilities while consistently building new ones. Leveraging AI to accelerate learning and problem-solving." },
+    { label: "At Home", title: "Independent Developer", date: "Present", details: "Focusing on mastering full-stack capabilities while consistently building new ones. Leveraging AI to accelerate learning and problem-solving. Also there are others activity like electrical engineering, repairman,and seller" },
     { label: "PC LDII", title: "Technology Educator", date: "2023 - Present", details: "Balancing roles as a student and educator, teaching practical technology skills and mentoring youth." },
     { label: "Lentera Sinar", title: "Contributor", date: "2024", details: "Actively building a portfolio of digital and non-digital businesses to turn conceptual ideas into reality." },
     { label: "CV. Ady Teknik", title: "System Developer", date: "2026", details: "Developing a comprehensive internal management system including finance, inventory, and human resource modules." },
     { label: "PT Nocola", title: "IoT Intern", date: "Previous", details: "Engaged in hardware and electrical systems integration, gaining hands-on experience with embedded systems." },
-    { label: "Anak Bangsa", title: "Community Lead", date: "Ongoing", details: "Managing community projects and tech-driven youth development initiatives." },
-    { label: "rimbakata", title: "Founder", date: "2024", details: "Building 'rimbakata', an interactive language learning application utilizing Next.js, Laravel, and MySQL." }
+    { label: "Anak Bangsa", title: "Community Lead", date: "Ongoing", details: "Managing community projects and tech-driven youth development initiatives." }
   ];
 
   // Data Project
