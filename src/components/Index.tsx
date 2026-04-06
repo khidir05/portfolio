@@ -158,7 +158,7 @@ const Index = () => {
           >
             <iframe 
                className="w-full h-full"
-               src="https://www.youtube-nocookie.com/embed/R1PesBAnS24" 
+               src="https://www.youtube-nocookie.com/embed/GXNHuBG1xL8?si=wgXIgsvWABm00rfL" 
                title="Expert System Presentation" 
                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                allowFullScreen
