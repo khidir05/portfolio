@@ -26,7 +26,7 @@ const Index = () => {
 
   const techStack = [
     "JavaScript (ES6+)", "TypeScript", "React / Next.js", "Tailwind CSS", 
-    "Laravel", "PostgreSQL", "Linux / DevOps", "Electrical Engineering"
+    "Laravel", "NestJS", "PostgreSQL", "MySQL", "IoT Integration", "Electrical Engineering"
   ];
 
   const experiences = [
@@ -41,45 +41,51 @@ const Index = () => {
   // Data Project
   const projects = [
     { 
-      title: "Dermacare AI", 
-      description: "Expert System for Facial Skin Disease Diagnosis using a Random Forest model connected via a robust Laravel API. This application helps users to quickly identify potential skin diseases based on image processing.", 
-      image: "/project/dermacare1.jpg", 
-      tech: ["Laravel", "Keras", "TensorFlow"], 
-      githubLink: "https://github.com/khidir05/CapstoneProjectDicoding.git",
-      detailLink: "/dermacare-ai" 
-    },
-    { 
-      title: "DPRKP Inventory", 
-      description: "Inventory management web app designed specifically for the Department of Housing and Settlement of DKI Jakarta. It includes modules for tracking items, managing stock levels efficiently, and generating automated reports.", 
-      image: "/project/2.jpg", 
-      tech: ["Vue.js", "Laravel", "MySQL"], 
+      title: "DRPKP Jakarta Inventory Management System", 
+      description: "Successfully developed an independent Warehouse Inventory Management System currently ready for deployment at a government agency in DKI Jakarta. Built using Laravel, React, and MySQL, this multi-platform web application optimizes critical operations such as stock tracking, loan management, and automated procurement forms. Despite being my first major application project—completed within 2.5 months—it features a complex multi-role structure (Admin, Warehouse Head, and Staff) to ensure an efficient, transparent, and scalable workflow.", 
+      image: "/project/drpkp1.jpg", 
+      tech: ["Laravel", "React", "MySQL", "Tailwind CSS"], 
       githubLink: "https://github.com/khidir05",
-      liveLink: "#",
-      detailLink: "/dprkp-inventory" 
+      detailLink: "/projects/drpkp" 
     },
     { 
-      title: "Financial and Work Administration Management System for CV Ady Teknik", 
-      description: "A comprehensive, end-to-end management ecosystem designed for CV Ady Teknik, a technical service and contracting provider. The Challenge: Managing field operations, workforce attendance, and complex finances manually can lead to data silos and operational bottlenecks. ", 
-      image: "/project/adyteknik1.jpg", 
-      tech: ["React", "PostgreSQL", "Laravel", "Google Cloud API"], 
-      detailLink: "/adyteknik" 
-    },
-    { 
-      title: "Company Profile for PT. Bersinar Inti Global", 
-      description: "A digital presence that could match their industrial expertise and reach a wider, international audience.", 
+      title: "Landing Page PT Bersinar Inti Global, Karawang", 
+      description: "The landing page development for PT Bersinar Inti Global focuses on delivering an immersive visual experience. Utilizing the Laravel ecosystem, I successfully implemented deep customizations and complex visual animations that go beyond the limitations of standard CMS platforms, while maintaining a clean and scalable codebase.", 
       image: "/project/bersinarintiglobal1.jpg", 
-      tech: ["React", "PostgreSQL", "NestJS"],
+      tech: ["Laravel", "Tailwind CSS", "JavaScript", "Framer Motion"], 
       liveLink: "https://bersinarintiglobal.com",
-      detailLink: "/jelantahub" 
+      detailLink: "/projects/bersinar-inti-global" 
     },
     { 
-      title: "JelantaHub", 
-      description: "Software platform designed for managing the collection, tracking, and recycling logistics of used cooking oil, supporting green energy initiatives and effective waste management workflows.", 
-      image: "/project/3.jpg", 
-      tech: ["React", "PostgreSQL", "NestJS"], 
+      title: "Integrated Operational Management System CV Ady Teknik, Karawang", 
+      description: "At the beginning of 2026, I was entrusted to develop an integrated operational management system for CV Ady Teknik, an AC service company based in Karawang. Leveraging the synergy of Laravel and React, this application is designed to boost business efficiency through financial management, automated customer maintenance reminders, and organized technician scheduling. A key feature I implemented is the route optimization system, which helps technicians find the fastest paths to maximize field effectiveness and service quality.", 
+      image: "/project/adyteknik1.jpg", 
+      tech: ["Laravel", "React", "PostgreSQL", "Google Cloud API"], 
+      detailLink: "/projects/ady-teknik" 
+    },
+    { 
+      title: "JelantahHub Management System", 
+      description: "A web-based mobile application dedicated to the waste cooking oil management ecosystem. As the Software & Server Developer, I am building the backend using NestJS and the frontend with ReactJS. My primary focus is integrating IoT devices with the server to create an interactive platform that empowers the community to participate directly in environmental preservation.", 
+      image: "/project/jelantahub1.jpg", 
+      tech: ["NestJS", "ReactJS", "PostgreSQL", "IoT"], 
       githubLink: "https://github.com/khidir05",
-      liveLink: "#",
-      detailLink: "/jelantahub" 
+      detailLink: "/projects/jelantahhub" 
+    },
+    { 
+      title: "SIPERUS (Sistem Informasi Persediaan Rumah Susun)", 
+      description: "Siperus is a revised version of the previous DKI DPRKP project, with several revised features, naming, and architecture. Siperus focuses more on inventory management across multiple warehouses, permit applications, and out-of-stock notifications.", 
+      image: "/project/siperus1.jpg", 
+      tech: ["Laravel", "React", "MySQL", "Tailwind CSS"], 
+      githubLink: "https://github.com/khidir05",
+      detailLink: "/projects/siperus" 
+    },
+    { 
+      title: "PPG (Penggerak Pembina Generus) Cilacap Management System", 
+      description: "I managed to solve my problem by creating this system. As a member of the Curriculum Team at PPG (a youth-focused organization within a LDII, One of organization in Indonesia), I often received reports that were merely guesswork or estimates, not based on data, and without any evidence related to educational progress. I created a system that could monitor student learning progress indicators, teacher attendance, and student attendance, which also affect learning progress. Finally, I created a system that was interconnected within PPG with the concept of scope, levels, and roles.", 
+      image: "/project/ppg1.jpg", 
+      tech: ["Laravel", "React", "Tailwind CSS", "MySQL"], 
+      githubLink: "https://github.com/khidir05",
+      detailLink: "/projects/ppg-cilacap" 
     }
   ];
 
@@ -98,7 +104,7 @@ const Index = () => {
         >
           <p className="text-lg md:text-xl text-textGreen font-mono tracking-wide">Hi, my name is</p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-textLight tracking-tight">Khidir Afwan Amlabar.</h1>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-textDark mt-1">Engineer & Developer.</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-textDark mt-1">Fullstack Developer | Data Entry | Electrical Engineering | Project Manager</h2>
           
           {/* FOTO UNTUK MOBILE: Tampil di tengah teks hanya pada HP/Tablet (lg:hidden) */}
           <motion.div 
@@ -119,8 +125,7 @@ const Index = () => {
 
           {/* Lanjutan Teks */}
           <p className="text-base md:text-lg text-textDark font-medium max-w-2xl leading-relaxed mt-2 lg:mt-4">
-            I am a dedicated full-stack developer, university student, and educator. I thrive in challenging situations, using AI and modern tech to turn conceptual ideas into practical, real-world digital solutions.
-          </p>
+A Detail-oriented Informatics Engineering graduate and Frontend Engineer with comprehensive experience in full-stack web development and software quality assurance. Proficient in building responsive user interfaces using React, JavaScript, and modern frameworks, with a strong understanding of API integration and system optimization. Proven track record of delivering clean, production-ready code through agile development and rigorous testing methodologies.          </p>
           <a href="https://github.com/khidir05" target="_blank" rel="noreferrer" className="mt-4 lg:mt-8">
             <button className="px-8 py-4 border border-textGreen rounded text-textGreen font-mono text-sm hover:bg-textGreen/10 transition-colors duration-300">
               Check out my projects!
@@ -171,8 +176,8 @@ const Index = () => {
             viewport={{ once: true }}
             className="w-full text-textDark flex flex-col gap-6 text-base md:text-lg leading-relaxed text-left"
           >
-            <p>Hello! I am Khidir, a technology enthusiast currently balancing my final semester in Informatics Engineering with my roles as a developer and educator. My professional focus is on practical skill development—mastering current abilities while consistently building new ones.</p>
-            <p>This drive extends beyond academics into the realm of entrepreneurship. I actively build digital solutions, from language learning platforms to complex system architectures for corporate clients.</p>
+            <p>I am a Diploma student in Informatics Engineering at the State Polytechnic of Cilacap, with a strong interest in hardware integration and electrical systems. Alongside my academic background, I have gained practical experience as a freelance web developer and developed an entrepreneurial mindset by establishing and managing a herbal beverage business.</p>
+            <p>As a multi-talented individual, I combine a strong passion for learning with a structured mindset to remain solution-oriented across various fields. Supported by confident public speaking skills and experience in managing my own business, I am ready to contribute to a professional environment that demands technical precision, creativity, and continuous self-development.</p>
             <p className="text-textLight font-semibold mt-2">Here are a few technologies I’ve been working with recently:</p>
             <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-3 text-sm font-mono mt-2">
               {techStack.map((tech, i) => (
@@ -227,7 +232,7 @@ const Index = () => {
 
       {/* 03. Education */}
       <section id="education" className="pt-24 scroll-mt-10">
-        <SectionTitle title="Education" titleNo="3" />
+        <SectionTitle title="Education & Course" titleNo="3" />
         <div className="mt-12 flex flex-col gap-12 max-w-5xl text-left">
           {[
             { title: "Diploma of Informatics Engineering", place: "Politeknik Negeri Cilacap", date: "2023 - Present", desc: "Acquiring robust knowledge in computer networking, software engineering, mobile/web development, and expanding foundations in hardware systems." },
@@ -269,23 +274,29 @@ const Index = () => {
               >
                 <Link to={proj.detailLink} className="absolute inset-0 z-10 rounded-2xl" aria-label={`View details for ${proj.title}`}></Link>
 
-                <div className="w-full lg:w-1/2 relative overflow-hidden rounded-xl h-64 lg:h-80 shadow-2xl pointer-events-none">
-                  <div className="absolute inset-0 bg-textGreen/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                <div className="w-full lg:w-2/5 max-w-[400px] aspect-[4/3] relative overflow-hidden rounded-xl shadow-2xl pointer-events-none flex-shrink-0 bg-[#0A192F]/50 flex items-center justify-center">
+                  {/* Blurred Backdrop for varying aspect ratios */}
+                  <img 
+                    src={proj.image} 
+                    alt="" 
+                    className="absolute inset-0 w-full h-full object-cover filter blur-xl opacity-25 scale-110"
+                  />
+                  <div className="absolute inset-0 bg-textGreen/5 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                   <img 
                     src={proj.image} 
                     alt={proj.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0"
+                    className="relative z-0 max-w-full max-h-full object-contain p-2 group-hover:scale-[1.02] transition-transform duration-500"
                   />
                 </div>
 
-                <div className="w-full lg:w-1/2 flex flex-col justify-center relative z-20 pointer-events-none">
+                <div className="w-full lg:w-3/5 flex flex-col justify-center relative z-20 pointer-events-none">
                   <p className="text-textGreen font-mono text-sm mb-2">Featured Project</p>
                   
                   <h3 className="text-2xl md:text-3xl font-bold text-textLight mb-4 group-hover:text-textGreen transition-colors">
                     {proj.title}
                   </h3>
                   
-                  <div className="bg-[#0A192F] p-6 lg:p-8 rounded-xl shadow-xl text-textDark text-sm md:text-base leading-relaxed -ml-0 lg:ml-0 lg:-ml-12 border border-gray-800">
+                  <div className={cn("bg-[#0A192F] p-6 lg:p-8 rounded-xl shadow-xl text-textDark text-sm md:text-base leading-relaxed border border-gray-800", isReverse ? "lg:-mr-12" : "lg:-ml-12")}>
                     {proj.description}
                   </div>
 

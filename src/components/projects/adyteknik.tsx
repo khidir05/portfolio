@@ -1,15 +1,11 @@
-import React, { useEffect } from "react";
-import { TbBrandGithub } from "react-icons/tb";
-import { RxOpenInNewWindow } from "react-icons/rx";
+import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom"; // 1. IMPORT LINK
 import Navbar from "../Navbar"; 
 import Footer from "../Footer";
 
-const DermacareAI = () => {
+const AdyTeknik = () => {
   return (
     <main className="w-full min-h-screen font-bodyFont bg-bodyColor text-textLight selection:bg-textGreen selection:text-bodyColor">
-      {/* Memanggil Navbar yang sama */}
       <Navbar />
 
       <div className="max-w-4xl mx-auto px-6 lg:px-8 py-16 flex flex-col gap-10">
@@ -18,7 +14,7 @@ const DermacareAI = () => {
         <motion.a 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          href="/" 
+          href="/#projects" 
           className="text-textGreen font-mono text-sm hover:underline flex items-center gap-2 w-fit"
         >
           ← Back to Home
@@ -31,7 +27,7 @@ const DermacareAI = () => {
           transition={{ delay: 0.2 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold text-textLight mb-6">
-            Financial and Work Administration Management System for CV Ady Teknik
+            Integrated Operational Management System CV Ady Teknik
           </h1>
           
           <div className="flex flex-wrap items-center gap-6 text-textDark font-mono text-sm">
@@ -45,16 +41,22 @@ const DermacareAI = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="w-full h-64 md:h-[450px] rounded-xl overflow-hidden shadow-2xl border border-gray-800"
+          className="w-full max-w-[600px] aspect-[4/3] mx-auto relative overflow-hidden rounded-xl shadow-2xl border border-gray-800 bg-[#0A192F]/50 flex items-center justify-center"
         >
+          {/* Blurred Backdrop for varying aspect ratios */}
           <img 
             src="/project/adyteknik1.jpg" 
-            alt="Dermacare AI" 
-            className="w-full h-full object-cover"
+            alt="" 
+            className="absolute inset-0 w-full h-full object-cover filter blur-xl opacity-25 scale-110"
+          />
+          <img 
+            src="/project/adyteknik1.jpg" 
+            alt="CV Ady Teknik Management System" 
+            className="relative z-10 max-w-full max-h-full object-contain p-4"
           />
         </motion.div>
 
-        {/* Konten Blog (Lorem Ipsum) */}
+        {/* Konten Case Study */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,34 +65,38 @@ const DermacareAI = () => {
         >
           <h2 className="text-2xl font-bold text-textLight mt-4">Project Overview</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            CV Ady Teknik is a technical service and contracting provider specializing in HVAC systems in Karawang. At the beginning of 2026, I was commissioned to develop an integrated operational management system designed to coordinate field operations, improve workforce management, and optimize complex billing workflows.
           </p>
 
           <h2 className="text-2xl font-bold text-textLight mt-4">The Challenge</h2>
           <p>
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.
+            Prior to this development, CV Ady Teknik managed field assignments, technician attendance, and invoicing manually. This manual process led to data fragmentation, delays in customer follow-ups, and inefficiencies in dispatcher routing, which ultimately affected service capacity.
           </p>
 
           <h2 className="text-2xl font-bold text-textLight mt-4">Technologies Used</h2>
           <ul className="list-disc list-inside ml-4 space-y-2 text-textLight font-mono text-sm">
-            <li>Laravel - For robust backend API</li>
-            <li>Keras & TensorFlow - For machine learning models</li>
-            <li>React - For dynamic user interface</li>
-            <li>Tailwind CSS - For styling</li>
+            <li>Laravel - For a robust, transaction-safe backend API</li>
+            <li>React - For a dynamic dispatcher dashboard and responsive technician interfaces</li>
+            <li>PostgreSQL - For storing relational data securely, specifically spatial technician logs</li>
+            <li>Google Cloud Maps API - For location geocoding and routing calculation</li>
           </ul>
 
-          <h2 className="text-2xl font-bold text-textLight mt-4">The Solution & Result</h2>
+          <h2 className="text-2xl font-bold text-textLight mt-4">Key Features & Results</h2>
           <p>
-            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+            The system successfully boosted business efficiency by automating several critical modules:
           </p>
+          <ul className="list-disc list-inside ml-4 space-y-1 text-textDark">
+            <li><span className="text-textLight font-semibold">Financial Management:</span> Streamlined bookkeeping, expenses, and instant digital invoicing.</li>
+            <li><span className="text-textLight font-semibold">Automated Maintenance Reminders:</span> Automatically notifies customers of scheduled HVAC tune-ups via integrated notification triggers.</li>
+            <li><span className="text-textLight font-semibold">Route Optimization System:</span> A custom routing algorithm using mapping coordinates helps field technicians find the fastest paths between service stops, maximizing field productivity and customer satisfaction.</li>
+          </ul>
         </motion.div>
 
       </div>
 
-      {/* Memanggil Footer yang sama */}
       <Footer />
     </main>
   );
 };
 
-export default DermacareAI;
+export default AdyTeknik;
